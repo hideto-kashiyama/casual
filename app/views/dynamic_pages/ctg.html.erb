@@ -1,0 +1,19 @@
+
+<h2>カテゴリ一覧</h2><div class="half-frame">
+   
+<div class="half-box">
+ 
+ <div id="practis"> 
+ 
+    <ul >
+     
+      <% @categories.each do |ctg| %>
+        
+       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
+       
+       <% end %> 
+       
+     </ul>
+
+  </div>
+ 

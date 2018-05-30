@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'n': 1
+  j: MyString
+  e: MyString
+  category_id: 1
+  product_id: 1
+  husen: MyString
+
+two:
+  'n': 1
+  j: MyString
+  e: MyString
+  category_id: 1
+  product_id: 1
+  husen: MyString

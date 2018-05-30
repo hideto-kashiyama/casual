@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Masters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>N</th>
+      <th>J</th>
+      <th>E</th>
+      <th>Category</th>
+      <th>Product</th>
+      <th>Husen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @masters.each do |master| %>
+      <tr>
+        <td><%= master.n %></td>
+        <td><%= master.j %></td>
+        <td><%= master.e %></td>
+        <td><%= master.category_id %></td>
+        <td><%= master.product_id %></td>
+        <td><%= master.husen %></td>
+        <td><%= link_to 'Show', master %></td>
+        <td><%= link_to 'Edit', edit_master_path(master) %></td>
+        <td><%= link_to 'Destroy', master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master', new_master_path %>

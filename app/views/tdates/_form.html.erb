@@ -1,0 +1,41 @@
+<%= form_for(@tdate) do |f| %>
+  <% if @tdate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tdate.errors.count, "error") %> prohibited this tdate from being saved:</h2>
+
+      <ul>
+      <% @tdate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dt %><br>
+    <%= f.datetime_select :dt %>
+  </div>
+  <div class="field">
+    <%= f.label :cap %><br>
+    <%= f.text_field :cap %>
+  </div>
+  <div class="field">
+    <%= f.label :par %><br>
+    <%= f.number_field :par %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.number_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

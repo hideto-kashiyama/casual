@@ -1,0 +1,7 @@
+  <h2>テスト結果グラフ</h2><div class="half-frame">
+     <ul>
+        
+      <% @tdates.each do |tdt| %>
+        <li><%= tdt.cap %><br>　 <progress max="100" value="<%= tdt.par %>"></progress></a></li>
+       <% end %> 
+     </ul>

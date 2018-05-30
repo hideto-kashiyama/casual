@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dt:</strong>
+  <%= @tdate.dt %>
+</p>
+
+<p>
+  <strong>Cap:</strong>
+  <%= @tdate.cap %>
+</p>
+
+<p>
+  <strong>Par:</strong>
+  <%= @tdate.par %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @tdate.category_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @tdate.product_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @tdate.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_tdate_path(@tdate) %> |
+<%= link_to 'Back', tdates_path %>

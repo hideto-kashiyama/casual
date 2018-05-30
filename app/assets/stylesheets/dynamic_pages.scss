@@ -1,0 +1,65 @@
+// Place all the styles related to the DynamicPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+.listx  {
+    margin-bottom: 1px;
+    position:absolute; 
+    top: -12px; 
+    left: 230px;
+    width: 200px;
+    list-style-type: disc;
+    
+}
+
+.listx li {
+ background-color: transparent;
+ margin-bottom: 1px;
+ 
+}
+ 
+.pulldown li { 
+    position:relative;  
+    padding: 5px 10px;
+    width: 230px;
+    margin-top: 0em;
+    list-style-type: disc;
+
+}
+
+.pulldown  {
+ 
+    
+     
+}
+
+ .pulldown ul{
+     
+     display:none;
+      
+ } 
+
+
+ .textflame {
+ background-color: #336699;
+	color: #fff;
+	display: block;
+	width: 230px;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 10px; 
+
+}
+ 
+.textflame:hover {
+	background-color:#113366;
+	color: #fff;
+}	
+
+ 
+ 
+
+
+ 

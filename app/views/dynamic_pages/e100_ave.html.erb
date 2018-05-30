@@ -1,0 +1,8 @@
+<h2>カテゴリー別平均点の比較</h2><div class="half-frame">
+     <ul>
+        
+      <% @tdate_ave.each do |category_id, ave| %>
+        <% ctg = Category.find(category_id) %>
+        <li><%= ctg.ctg %><%= ave %></li>
+       <% end %> 
+     </ul>

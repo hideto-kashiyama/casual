@@ -1,0 +1,149 @@
+
+ <form method="get" action="/dynamic_pages/e100_seek">
+       <h4><input type="text" value="検索キーワードを入力" name="fstr" /> 
+         <input type="submit" value="検索" /></h4> 
+ </form> 
+ 
+ 
+
+<form method="get" action="/dynamic_pages/e100_seek">
+       <h4><input id="result_text2" type="text" value="" name="fstr" /> 
+         <input type="submit" value="検索" /></h4> 
+        
+         <input type="button" onClick="record()" value="録音開始" />
+    
+ </form> 
+
+
+
+ <div class="audio_flame">
+<div>     
+<!--<input id="globalMenu1" type="button" value="連続再生" onclick="ren()">-->
+
+<span id="globalMenu1" onclick="ren()"><i class="fa fa-play-circle fa-4x"></i>play</span >
+
+<!--<input id="globalMenu2" type="button" value="ランダム再生" onclick="rand()">-->
+
+<span id="globalMenu2" type="button" onclick="rand()"><i class="fa fa-random fa-4x" ></i>random</span>
+
+<!--<input type="button" value="" onclick="pause()">-->
+<!--<span id="pr_chg" type="button"><i class="fa fa-pause-circle fa-4x" onclick="pause_resume()"></i>pause</span>
+<a id="pr_chg" ><i class="fa fa-pause-circle fa-4x" onclick="pause_resume()"></i>pause</a>-->
+<span id="pr_chg" type="button"  onclick="pause_resume()"><i class="fa fa-pause-circle fa-4x" ></i><a id="atxt">pause</a></span>
+<!--<a id="pr_chg" onclick="pause_resume()"><span class="fa fa-pause-circle fa-4x" ></span>pause</a>-->
+
+
+<!--<input type="button" value="再開" onclick="resume()">-->
+<!--<input type="button" value="終了" onclick="cancelAudio()">-->
+<span type="button" onclick="cancelAudio()"><i class="fa fa-stop-circle fa-4x" ></i>cancel</span>
+</div> 
+
+<div id="vss">  
+<div><span>volume</span><input type="range"  id="volume" min="0" max="100" value="50" class="custom"><span id="value" class="vs">50</span></div>
+
+<div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" class="custom"><span id="value1" class="vs">1.0</span></div> 
+ 
+</div> 
+
+<div class="b_group">
+
+    <span><a>日英の再生間隔</a>
+    
+    <select id="select_time">
+      <option value="0">０秒</option>
+      <option value="1">１秒</option>
+      <option value="2">２秒</option>
+      <option value="3">３秒</option>
+    </select></span>
+        
+        
+    <span class="radio_group">ループ再生
+    <input type="radio" name="loop" value="0" checked>しない
+    <input type="radio" name="loop" value="1">する
+    </span>
+    
+    <span class="radio_group">再生対象
+    <input type="radio" name="je" value="aje" checked>日英
+    <input type="radio" name="je" value="ae">英
+    </span>
+
+</div>
+
+<a id="play_this"></a>
+
+</div>
+
+  <%= will_paginate @masters %>  
+
+ <script>
+ 
+  
+/* $(document).ready(function(){ 
+     
+    $('#pr_chg').menuClick({
+      menuExpandedClass:"fa fa-play fa-4x",
+      menuCollapseClass:"fa fa-pause-circle fa-4x",
+    });
+ 
+  });*/
+  
+/*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/
+window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+var recognition = new webkitSpeechRecognition();
+//recognition.lang = 'ja';
+recognition.lang = 'en-US';
+// 録音終了時トリガー
+recognition.addEventListener('result', function(event){
+    var text = event.results.item(0).item(0).transcript;
+    //$("#result_text").val(text);
+    $("#result_text2").val(text);
+}, false);
+
+// 録音開始
+function record()
+{
+    recognition.start();
+}
+
+  
+  
+  var elem = document.getElementById('volume');
+  var target = document.getElementById('value');
+  var rangeValue = function (elem, target) {
+    return function(evt){
+      target.innerHTML = elem.value;
+    }
+  }
+  elem.addEventListener('input', rangeValue(elem, target));
+  
+  
+  var elem1 = document.getElementById('speed');
+  var target1 = document.getElementById('value1');
+  var rangeValue1 = function (elem1, target1) {
+    return function(evt){
+      target1.innerHTML = elem1.value;
+    }
+  }
+  elem1.addEventListener('input', rangeValue1(elem1, target1));
+  
+</script>
+
+
+
+<ul class="hoge">
+  
+     <% @masters.each_with_index do |mstr, i| %>
+     
+           <div class="audio_set">
+             
+                <audio class="jp" src="/jsf/<%= mstr.id %>.mp3"></audio>
+           
+                <audio class="en" src="/sf/<%= mstr.id %>.mp3"></audio>
+                 
+             </div>
+           
+                 <li><a href="javascript:tan(<%= i %>)"><%= mstr.j %><br>  <%= mstr.e %>  </a></li>
+            
+     <% end %>
+  
+</ul>

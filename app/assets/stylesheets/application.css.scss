@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *=require_directory .
+ *require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+   
+        /* navbar 全体の背景色とボーダーカラー */
+.navbar-default {
+background-color: #65baad;
+border-color: #3e6962;
+height: 10px;
+
+}
+
+
+
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+color: #ffffff;
+}
+
+
+
+#navbar-header {
+    
+   color: white;
+}
+
+
+.hoge{
+
+ font-size: 1.5em;
+
+}
+
+h1 {
+position: relative;
+padding: 0.25em 0;
+
+font-weight : 200;
+font-family: "Century Gothic";
+}
+h1:after {
+content: "";
+display: block;
+height: 4px;
+background: -moz-linear-gradient(to right, rgb(200,200, 200), transparent);
+background: -webkit-linear-gradient(to right, rgb(200,200, 200) transparent);
+background: linear-gradient(to right, rgb(200,200, 200), transparent);
+}
+
+/* ▼グループの囲み */
+fieldset {
+   margin: 1em 0px;         /* 外側の余白 */
+   padding-top: 0.6em;      /* 内側の余白 */
+   background-color: #ccc;  /* 背景色 */
+   
+   
+}
+
+
+
+
+
+
+

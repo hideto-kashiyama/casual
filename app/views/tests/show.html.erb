@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Master:</strong>
+  <%= @test.master_id %>
+</p>
+
+<p>
+  <strong>Tdate:</strong>
+  <%= @test.tdate_id %>
+</p>
+
+<p>
+  <strong>Ten:</strong>
+  <%= @test.ten %>
+</p>
+
+<p>
+  <strong>Sh:</strong>
+  <%= @test.sh %>
+</p>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>
