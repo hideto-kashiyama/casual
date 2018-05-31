@@ -23,8 +23,8 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/secrets.yml'
 )
 
-#set :passenger_environment_variables, {}
-#set :passenger_restart_command, "/usr/local/rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/passenger-5.3.1/bin/passenger-config restart-app #{deploy_to}" 
+set :passenger_environment_variables, {}
+set :passenger_restart_command, "passenger-config restart-app" 
 
 namespace :deploy do
   desc "Make sure local git is in sync with remote."

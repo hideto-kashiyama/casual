@@ -7,13 +7,13 @@ server "133.18.16.115", user: "deploy", roles: %w{app db web}
 
 set :ssh_options,     {
   user: fetch(:user),
-  keys: %w(~/.ssh/wes-deploy)
+  keys: %w(~/.ssh/wes-deploy),
+  forward_agent: true
 }
 
-
-role :app, %w{133.18.16.115}
-role :web, %w{133.18.16.115}
-role :db,  %w{133.18.16.115}
+set :default_env, {
+  "PASSENGER_INSTANCE_REGISTRY_DIR" => "/var/run/passenger-instreg"
+}
 
 
 
