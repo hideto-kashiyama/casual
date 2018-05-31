@@ -7,10 +7,9 @@
  function je_interval(tval) {
      
      //tval*1000秒空けて再生
-                 const d1 = new Date();
-                    while (true) {
-                   const d2 = new Date();
-                    if (d2 - d1 > tval*1000) {
+                 var d1 = new Date();
+                    while (true) {    
+                    if (new Date() - d1 > tval*1000) {
                        break;
                     }
 
@@ -729,10 +728,9 @@ function ren_test() {
                     }
   
                 　//0.5秒空けて再生
-                 const d1 = new Date();
+                 var d1 = new Date();
                     while (true) {
-                   const d2 = new Date();
-                    if (d2 - d1 > 500) {
+                    if (new Date() > 500) {
                        break;
                     }
 
