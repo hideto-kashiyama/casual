@@ -52,3 +52,5 @@ gem 'devise', '3.4.1'
 gem 'aws-sdk'
 
 gem 'will_paginate'
+
+gem "font-awesome-rails"

@@ -35,10 +35,22 @@
 		</div>
 		
 		<div class="collapse navbar-collapse" id="navbarEexample2">
+		  
 			<ul class="nav navbar-nav">
-				<li><a href="#">トップページ</a></li>
-				<li class="active"><a href="#">ヘルプ</a></li>
-				<li><a href="#">メニューＣ</a></li>
+			  
+				<li><a>カジュアル英語</a></li>
+				
+				<li><form method="get" action="/dynamic_pages/e100_seek">
+          <h4><input id="result_text2" type="text" value="検索キーワードを入力" name="fstr" /> 
+          <input type="submit" value="検索" /></i></h4> 
+        </form>
+        </li>
+        
+        <%= button_tag :type => "submit", :onclick =>"record()" do %>
+           <i class="fa fa-microphone fa-2x"></i>
+        <% end %>
+        
+       
 			</ul>
 		</div>
 	</div>
