@@ -50,6 +50,8 @@ group :development do
   gem 'capistrano-rbenv',   require: false
   
   gem 'sqlite3'
+  
+  gem 'seed_dump'
 end
 
 group :production do
@@ -66,3 +68,4 @@ gem 'aws-sdk'
 gem 'will_paginate'
 
 gem "font-awesome-rails"
+gem "config"
