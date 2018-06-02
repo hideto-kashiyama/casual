@@ -58,56 +58,7 @@
 
   <%= will_paginate @masters %>  
 
- <script>
  
-  
-/* $(document).ready(function(){ 
-     
-    $('#pr_chg').menuClick({
-      menuExpandedClass:"fa fa-play fa-4x",
-      menuCollapseClass:"fa fa-pause-circle fa-4x",
-    });
- 
-  });*/
-  
-/*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-var recognition = new webkitSpeechRecognition();
-//recognition.lang = 'ja';
-recognition.lang = 'en-US';
-// 録音終了時トリガー
-recognition.addEventListener('result', function(event){
-    var text = event.results.item(0).item(0).transcript;
-    //$("#result_text").val(text);
-    $("#result_text2").val(text);
-}, false);
-
-// 録音開始
-function record()
-{
-    recognition.start();
-}
-
-  var elem = document.getElementById('volume');
-  var target = document.getElementById('value');
-  var rangeValue = function (elem, target) {
-    return function(evt){
-      target.innerHTML = elem.value;
-    }
-  }
-  elem.addEventListener('input', rangeValue(elem, target));
- 
-  var elem1 = document.getElementById('speed');
-  var target1 = document.getElementById('value1');
-  var rangeValue1 = function (elem1, target1) {
-    return function(evt){
-      target1.innerHTML = elem1.value;
-    }
-  }
-  elem1.addEventListener('input', rangeValue1(elem1, target1));
-  
-</script>
-
 
 
 <ul class="hoge">

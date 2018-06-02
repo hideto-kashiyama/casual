@@ -37,13 +37,27 @@ height: 10px;
     
 }
 
-.mic {
+.fontawesome_submit{
+    font-family: FontAwesome;
+}
+
+#mic {
     
     margin-top: 8px;
     margin-left: 8px;
+    background-color:#65baad;
+
+     /* ボーダーをなくす */
+    border-style: none;
+
+    
 }
 
 .btn {
+    
+    margin-top: 8px;
+    margin-left: 8px;
+    
     width:50px;
     font-size:12px;
     
@@ -52,7 +66,7 @@ height: 10px;
     text-align:center;
     padding:2px 0 5px;
     color:#fff;
-    background-color:#49a9d4;
+    background-color:Black;
     border-radius:10px;
     
     

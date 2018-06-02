@@ -34,22 +34,63 @@
 			</a>
 		</div>
 		
+<script>
+
+    /*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/
+    window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+    var recognition = new webkitSpeechRecognition();
+    //recognition.lang = 'ja';
+    recognition.lang = 'en-US';
+    // 録音終了時トリガー
+    recognition.addEventListener('result', function(event){
+        var text = event.results.item(0).item(0).transcript;
+        //$("#result_text").val(text);
+        $("#result_text2").val(text);
+    }, false);
+
+  // 録音開始
+  function record()
+  {
+      recognition.start();
+  }
+  
+    var elem = document.getElementById('volume');
+    var target = document.getElementById('value');
+    var rangeValue = function (elem, target) {
+      return function(evt){
+        target.innerHTML = elem.value;
+      }
+    }
+    elem.addEventListener('input', rangeValue(elem, target));
+   
+    var elem1 = document.getElementById('speed');
+    var target1 = document.getElementById('value1');
+    var rangeValue1 = function (elem1, target1) {
+      return function(evt){
+        target1.innerHTML = elem1.value;
+      }
+      
+    }
+    
+    elem1.addEventListener('input', rangeValue1(elem1, target1));
+
+</script>
+		
+		
 		<div class="collapse navbar-collapse" id="navbarEexample2">
 		  
 			<ul class="nav navbar-nav">
 			  
 				<li><a>カジュアル英語</a></li>
 				
-				<li><form method="get" action="/dynamic_pages/e100_seek">
-          <h4><input id="result_text2" type="text" value="検索キーワードを入力" name="fstr" /> 
-          <input type="submit" value="検索" /></i></h4> 
-        </form>
-        </li>
-        
-        <%= button_tag :type => "submit", :onclick =>"record()" do %>
-           <i class="fa fa-microphone fa-2x"></i>
-        <% end %>
-        
+			 <li><form method="get" action="/dynamic_pages/e100_seek">
+              <input id="result_text2" type="text" value="検索キーワードを入力" name="fstr" /> 
+              <input type="submit" value="検索" />
+           </form></li>
+       
+        <button id="mic" type="submit" onclick ="record()">
+          <i class="fa fa-microphone fa-2x"></i>
+        </button>
        
 			</ul>
 		</div>
