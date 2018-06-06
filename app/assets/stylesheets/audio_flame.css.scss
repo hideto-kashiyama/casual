@@ -1,18 +1,21 @@
 div.audio_flame {
+   margin-top: 53px;
+   position:fixed; 
+   
   -moz-border-radius: 10px;    /* 古いFirefox用 */
   -webkit-border-radius: 10px; /* 古いSafari,Chrome用 */
   border-radius: 10px;         /* CSS3の書き方 */
   
   border: 3px gray solid;     /* 枠線の装飾 */
-  background-color: #D0D5CF;   /* 背景色 */
-  width: 715px; height: 260px;
+  background-color: #DCDCDC;   /* #D0D5CF背景色 */
+  width: 650px; height: 260px;
   box-shadow:5px 5px;
   
   padding: 10px 30px;
   
   line-height: 300%;
   
-  margin : 12px ;
+
    
       i{
         position: relative;
@@ -22,15 +25,46 @@ div.audio_flame {
       }
       
     }
+    
+#select_time {
+    
+    margin-left : 5px ; 
+    margin-top: 12px;  
+    width: 55px;
+    height: 25px;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    
+    outline: none;
+    background: white;
+    background-image: none;
+
+  border:none;
+  border-radius:5px;
+  box-shadow: none;
+  padding: 2px; 
+    
+}
+    
+#f_msg {
+    
+    margin-left : 10px ;
+    font-size: 1.2em;
+    color: red;
+}
+
 
 #volume {
-  width: 250px;
+    
+  width: 200px;
+  
 }
 
 #speed {
-  width: 250px;
-  
-  
+    
+  width: 200px;
+
 }
 
 .input-group {
@@ -39,41 +73,29 @@ div.audio_flame {
 
 /* ▼radioグループの囲み */
 .radio_group {
-   
+    margin-left : 0px ; 
     color: black;
-    border-radius: 10px;  
+    border-radius: 5px;  
     margin: 20px 10px;         /* 外側の余白 */
     padding: 5px;      /* 内側の余白 */
     background-color: #ffffff; /* 背景色 */
     width:400px;
-    height: 80px;
+    height: 100px;
     vertical-align: middle; /* 「vertical-align」を指定してもテキストは縦方向中央揃いにならない */
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 20px;
-    
+ 
 }
 
-.b_group {
+#seek_result {
     
-    
-    
+margin-left : 5px ; 
+color:red;
+ 
 }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 0;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background: none transparent;
-  vertical-align: middle;
-  font-size: inherit;
-  color: inherit;
-  box-sizing: content-box;
-}
+
 
 
  input[type="range"].custom {
@@ -133,7 +155,7 @@ input[type="range"].custom:focus {
 
 #play_this {
   
- font-size: 150%;
+ font-size: 120%;
  color: #a52a2a;
 }
 

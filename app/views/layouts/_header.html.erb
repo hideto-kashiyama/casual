@@ -1,134 +1,78 @@
 
+
  <nav class="navbar  navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample2">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			
-			<a class="navbar-brand" href="#">
+	
+		 <a class="navbar-brand" href="#">
 			  
-				<span ><i class="fa fa-rebel" style="color: white">
-				<% if @page_title %><%= @page_title %>
-				
-				 <% else if @tdt.nil? %>
-  
-            <% if @product.nil? %>
-            
-               <% else %>
-                 <%= @product.pnam %>⇒<%= @ctg.ctg %>
-             <% end %> 
-            
-         <% else %>
-          
-          <%= @tdt.cap%>
-        
-        <% end %>
-			<% end %>
+				<span ><i class="fa fa-rebel" style="color: white">カジュアル英語
 			
 				</i></span>
 				
 			</a>
-		</div>
-		
+			
+		 	<ul class="nav navbar-nav">
+			 
+			 <li><form method="get" action="/dynamic_pages/e100_seek">
+			   
+              <input id="result_text2" type="text"  placeholder="検索キーワードを入力" name="fstr" /> 
+              <input id="result_btn" type="submit" value="検索" />
+              
+        </form></li>
+       
+       <li>
+        <button id="mic" type="submit" onclick ="record()">
+          <i class="fa fa-microphone fa-2x"></i>
+        </button></li>
+        <li>
+         <span>
+         　<select id="select_gengo">
+              <option value=0>英語音声入力</option>
+              <option value=1>日本語音声入力</option>
+            </select>
+            </span>
+      </li>
+      
+			</ul>
+			<!--ラジオボタン使った場合
+				// <label><input type="radio" name="ej" value="0" checked>英語</label>
+    // <label><input type="radio" name="ej" value="1">日本語</label>-->
 <script>
 
     /*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     var recognition = new webkitSpeechRecognition();
-    //recognition.lang = 'ja';
-    recognition.lang = 'en-US';
     // 録音終了時トリガー
-    recognition.addEventListener('result', function(event){
-        var text = event.results.item(0).item(0).transcript;
-        //$("#result_text").val(text);
-        $("#result_text2").val(text);
-    }, false);
-
+      recognition.addEventListener('result', function(event){
+          var text = event.results.item(0).item(0).transcript;
+          
+          $("#result_text2").val(text);
+      }, false);
+      
   // 録音開始
-  function record()
-  {
-      recognition.start();
-  }
-  
-    var elem = document.getElementById('volume');
-    var target = document.getElementById('value');
-    var rangeValue = function (elem, target) {
-      return function(evt){
-        target.innerHTML = elem.value;
-      }
-    }
-    elem.addEventListener('input', rangeValue(elem, target));
+  function record() {
+     　
+    var ejval = $("#select_gengo").val(); //音声入力言語値取得 0 :英 1 :日
+    alert(ejval);
+   //var ejval= $("input[name='ej']:checked").val();　//
+    
+    if ( ejval==0 ) {
+    //英語
    
-    var elem1 = document.getElementById('speed');
-    var target1 = document.getElementById('value1');
-    var rangeValue1 = function (elem1, target1) {
-      return function(evt){
-        target1.innerHTML = elem1.value;
-      }
+       recognition.lang = 'en-US';
+       
+     } else {
+    　　//日本語
+    　　
+    　　recognition.lang = 'ja';
       
     }
     
-    elem1.addEventListener('input', rangeValue1(elem1, target1));
-
+    recognition.start();
+ 
+  }
+   /*ここまで録音*/
+ 
 </script>
-		
-		
-		<div class="collapse navbar-collapse" id="navbarEexample2">
-		  
-			<ul class="nav navbar-nav">
-			  
-				<li><a>カジュアル英語</a></li>
-				
-			 <li><form method="get" action="/dynamic_pages/e100_seek">
-              <input id="result_text2" type="text" value="検索キーワードを入力" name="fstr" /> 
-              <input type="submit" value="検索" />
-           </form></li>
-       
-        <button id="mic" type="submit" onclick ="record()">
-          <i class="fa fa-microphone fa-2x"></i>
-        </button>
-       
-			</ul>
-		</div>
-	</div>
+
 </nav>
 
-<!--
-  <div class="navbar-header"></div>
-  
-  
-  
-  <div class="container">
- 
-    
-    <%= link_to "", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-       
-        <% if user_signed_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li id="fat-menu" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>-->
-  

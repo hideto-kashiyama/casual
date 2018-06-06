@@ -1,5 +1,6 @@
 class DynamicPagesController < ApplicationController
- #before_action :authenticate_user!
+ 
+#before_action :authenticate_user!
  def home
   
     @products1=Product.where(p:1)
@@ -20,21 +21,15 @@ class DynamicPagesController < ApplicationController
   
   def e100
    
-    # @ctg = Category.find_by_id(params[:category_id])
-    
-    # @masters = Master.where(category_id: params[:category_id] and page: 1)
       @masters = Master.all.page(params[:page])
-      #@masters1 = Master.where(category_id: params[:category_id])
       
-      #@masters_cnt=@masters1.count
+      if @masters.count!=0
      
-      #@product = Product.find_by_id(@ctg.product_id)
+      flash[:warning] =""
      
-    # @page_title = @product.pnam
-    
-  end
-  
+      end
  
+  end
   
   def e100_seek
   
@@ -43,13 +38,35 @@ class DynamicPagesController < ApplicationController
       @masters = Master.where("e like '%" + fstr + "%'").page(params[:page])
       
       if @masters.count==0
+        
+         @masters = Master.where("j like '%" + fstr + "%'").page(params[:page])
+         
+         if @masters.count==0
        
-         flash[:warning] = "該当するデータがありません。"
+            flash[:warning] = fstr + "：" + "0件 該当なし。"
+            
+          else
+          
+            str= @masters.count.to_s
+             
+            flash[:warning] = fstr + "：" + str  + "件抽出されました。"
+      
+          end
+        
+      else
+          
+         str= @masters.count.to_s
+         val= fstr + "：" + str  + "件"
+          
+         flash[:warning] = val
       
      end
       
       render action: :e100
      
   end
+  
+  
+  
  
 end

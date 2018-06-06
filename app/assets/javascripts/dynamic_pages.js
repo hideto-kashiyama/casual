@@ -1,3 +1,6 @@
+
+ 
+ 
  var atag;//再生中のaudioタグ を格納　停止　一時停止用
 
  var renflag = false;　//連続再生ボタンが押されたら true
@@ -19,9 +22,20 @@
  
  //音量調整
  function vol(audio_tag) {
-  
-        var volume = document.getElementById("volume");
-        
+     
+    /*if (vcookie) {
+         
+          var volume = vcookie;
+    
+     } else {
+         
+         var volume = document.getElementById("volume");
+         
+     }*/
+     
+       //var volume = vcookie;
+       var volume = document.getElementById("volume");
+         
         volume.addEventListener('input', function() {
    
          var volumeValue = parseInt(volume.value) / 100;//'0.' + volume.value;  //volume.value/100; //
@@ -326,7 +340,7 @@ function rand() {
     
    var radio_loop= $("input[name='loop']:checked").val();　//ループ再生の値取得 0 :しない 1 :する
    
-   var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];　　//".hoge div"の要素のインデックス
+   var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];　　//".hoge div"の要素のインデックス
    
     audio_array=shuffle(audio_array); //配列をシャッフル
 

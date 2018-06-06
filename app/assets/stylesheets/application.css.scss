@@ -16,25 +16,87 @@
  */
 
 @import "bootstrap";
-   
-        /* navbar 全体の背景色とボーダーカラー */
+
+li {
+margin-bottom: 5px;
+}
+
+.navbar-nav {
+    
+   width: 400px; 
+    
+}
+
+#select_gengo{
+    margin-top: 12px;  
+    margin-left: -12px;
+    width: 125px;
+    height: 25px;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    
+    outline: none;
+    background: white;
+    background-image: none;
+
+  border:none;
+  border-radius:5px;
+  box-shadow: none;
+  padding: 2px; 
+  
+}
+
+
+
+#logincap {
+  
+   color: white;  
+    
+}
+
+.login_btn {
+    
+  background-color: #333;
+  border: 2px solid #333;
+  color: #fff;
+  line-height: 40px;
+  width:150px;
+  
+   font-size:40; 
+}
+
+.main {
+ margin-top: 310px;
+   /*padding-top:10px;
+  margin-top:50px;
+  height:auto;
+  padding-bottom:10px;
+  margin-bottom:80px;*/
+}
+
+ /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-background-color: #65baad;
-border-color: #3e6962;
-height: 10px;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:50px; 
+        background-color: #65baad;
+        border-color: #3e6962;
+        height: 10px;
 
 }
 
-#result_text2 {
-   
-    border:none;
-  border-radius:5px;
-  box-shadow: none;
-  padding: 2px 8px; 
-  margin-top: 12px  
-  
-    
-    
+
+/* navbar deviceのみ*/
+.navbar-default1 {
+ 
+background-color: Black;
+border-color: #3e6962;
+height: 10px;
+
+
 }
 
 .fontawesome_submit{
@@ -44,13 +106,25 @@ height: 10px;
 #mic {
     
     margin-top: 8px;
-    margin-left: 8px;
+    margin-left: 3px;
+    
     background-color:#65baad;
 
      /* ボーダーをなくす */
     border-style: none;
 
-    
+}
+
+#result_text2 {
+   
+  border:none;
+  border-radius:5px;
+  box-shadow: none;
+  padding: 2px 8px; 
+  margin-top: 12px;  
+  margin-left: -5px;
+  width:155px;
+  
 }
 
 .btn {
@@ -68,9 +142,46 @@ height: 10px;
     color:#fff;
     background-color:Black;
     border-radius:10px;
-    
-    
+  }
+
+#result_btn {
+    background-color:#F5F5DC;
+    height: 25px;
+    border-radius:5px;
+    border:none;
 }
+
+  /*will_pagenateのデザイン変更　参考ページhttp://mislav.github.io/will_paginate/?page=2　*/
+  
+.digg_pagination {
+   
+   margin-left: 30px; 
+    margin-top: 5px;
+    
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
 
 
 /* navbar テキストカラー */
@@ -89,7 +200,7 @@ color: #ffffff;
 .hoge{
 
  font-size: 1.5em;
-
+ margin-top: 5px;
 }
 
 h1 {
