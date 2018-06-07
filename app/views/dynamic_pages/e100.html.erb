@@ -16,8 +16,9 @@
 
 <!--ボリューム スピードスライダー-->
 <div id="vss">  
-  <div><span>volume</span><input type="range"  id="volume" min="0" max="100" class="custom" value=50><span id="value" class="vs">50</span></div>
-  <div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" value="1.0" class="custom"><span id="value1" class="vs">1.0</span></div> 
+  <div><span>volume</span><input type="range"  id="volume" min="0" max="100" class="custom" ><span id="value" class="vs">50</span></div>
+<!--  <div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" class="custom"><span id="value1" class="vs">1.0</span></div> -->
+<br>
 </div> 
 
 <div class="b_group">
@@ -45,13 +46,13 @@
 </div>
 
  <a id="play_this"></a>
-
+ 
 </div>
 
 <div class="main">
   
  <div class="digg_pagination">
-   <%= will_paginate @masters %>  
+   <%= will_paginate @masters %> 
  </div>
  
  <script>
@@ -65,14 +66,14 @@
   }
   elem.addEventListener('input', rangeValue(elem, target));
  //speed
-  var elem1 = document.getElementById('speed');
+  /*var elem1 = document.getElementById('speed');
   var target1 = document.getElementById('value1');
   var rangeValue1 = function (elem1, target1) {
     return function(evt){
       target1.innerHTML = elem1.value;
     }
   }
-  elem1.addEventListener('input', rangeValue1(elem1, target1));
+  elem1.addEventListener('input', rangeValue1(elem1, target1));*/
   
 </script>
 
@@ -84,9 +85,9 @@
      
            <div class="audio_set">
              
-                <audio class="jp" src="<%=Settings.mp3.root_path%>/jsf/<%= mstr.id %>.mp3"></audio>
+                <audio class="jp" src="<%=Settings.mp3.root_path%>/jsf/<%= mstr.id %>.mp3" preload="auto"></audio>
            
-                <audio class="en" src="<%=Settings.mp3.root_path%>/sf/<%= mstr.id %>.mp3"></audio>
+                <audio class="en" src="<%=Settings.mp3.root_path%>/sf/<%= mstr.id %>.mp3" preload="auto"></audio>
                  
              </div>
            

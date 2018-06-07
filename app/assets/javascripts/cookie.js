@@ -15,7 +15,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
      } else {
         
        $('#volume').val(50);
-       $('#value').val(50);
+       $('#value').text(50);
        $.cookie('v_cookie', 50, {path:'/'}); 
    
      }
@@ -26,7 +26,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
    
      });  
 //スピード
-   if(scookie){
+  /* if(scookie){
         
       $('#speed').val(scookie);
       $('#value1').text(scookie);
@@ -34,7 +34,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
      } else {
         
        $('#speed').val(1.0);
-       $('#value1').val(1.0);
+       $('#value1').text(1.0);
        $.cookie('s_cookie', 1.0, {path:'/'}); 
    
      }
@@ -43,7 +43,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
         
          $.cookie('s_cookie', $('#speed').val() , {path:'/'}); 
        
-     });  
+     });  */
      
 //再生間隔 
     if(tcookie){

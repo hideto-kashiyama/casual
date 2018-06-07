@@ -10,7 +10,7 @@
 				
 			</a>
 			
-		 	<ul class="nav navbar-nav">
+	<ul class="nav navbar-nav">
 			 
 			 <li><form method="get" action="/dynamic_pages/e100_seek">
 			   
@@ -29,13 +29,27 @@
               <option value=0>英語音声入力</option>
               <option value=1>日本語音声入力</option>
             </select>
+            
             </span>
+            
       </li>
       
-			</ul>
+      
+        
+		<li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></i>
+ 
+			 
+      
+   </ul>
+          
 			<!--ラジオボタン使った場合
 				// <label><input type="radio" name="ej" value="0" checked>英語</label>
     // <label><input type="radio" name="ej" value="1">日本語</label>-->
+    
+  </nav> 
+  
+     
+
 <script>
 
     /*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/
@@ -74,5 +88,5 @@
  
 </script>
 
-</nav>
+
 

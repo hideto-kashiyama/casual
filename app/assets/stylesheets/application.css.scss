@@ -151,6 +151,12 @@ height: 10px;
     border:none;
 }
 
+div.collapse.navbar-collapse.navbar-right {
+  text-align: right;
+  display: block;
+  color:white;
+}
+
   /*will_pagenateのデザイン変更　参考ページhttp://mislav.github.io/will_paginate/?page=2　*/
   
 .digg_pagination {

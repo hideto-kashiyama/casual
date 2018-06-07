@@ -36,13 +36,13 @@
        //var volume = vcookie;
        var volume = document.getElementById("volume");
          
-        //volume.addEventListener('input', function() {
+      //volume.addEventListener('input', function() {
    
           var volumeValue = parseInt(volume.value) / 100;//'0.' + volume.value;  //volume.value/100; //
          
           audio_tag.get(0).volume = volumeValue;
         
-        // }, false);
+         //}, false);
      
  }
  
@@ -51,13 +51,13 @@
      
 　　    var spd = document.getElementById("speed");
         
-        //spd.addEventListener("change", function() {
+       spd.addEventListener("change", function() {
             
              var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
            
            audio_tag.get(0).playbackRate = spdValue;
         
-         //}, false);
+        }, false);
      
  }
  
@@ -96,7 +96,10 @@ function tan_tan(key) {
     if ( radio_a=="aje") {　//再生対象の値 aje :日英
        
       //日本語再生
+       console.log(key);
      　$(".hoge div").eq(key).find("audio.jp").get(0).play();
+     　$(".hoge div").eq(key).find("audio.en").get(0).load();
+     　console.log("j_start");
      　
      　　　atag= $(".hoge div").eq(key).find("audio.jp"); //停止　一時停止用
      　　　
@@ -108,7 +111,7 @@ function tan_tan(key) {
              
         //イベントリスナー
        $(".hoge div").eq(key).find("audio.jp").one('ended',function() {
-           
+           console.log("j_end");
            　var selectVal;
            　
             selectVal = $("#select_time").val(); //日英再生間隔秒数取得
@@ -116,8 +119,9 @@ function tan_tan(key) {
              je_interval(selectVal);//日英再生間隔秒数セット
      　　
      　　//英語再生
+       console.log(key);
         $(".hoge div").eq(key).find("audio.en").get(0).play();
-        
+         console.log("e_start");
           atag= $(".hoge div").eq(key).find("audio.en"); //停止　一時停止用
           
               vol(atag); // //音量設定
@@ -461,8 +465,6 @@ function pause_resume(){
 function pause(){
     
 　	atag.get(0).pause();
-　	
-　
 　	$("#pr_chg i").removeClass("fa-pause-circle");
 
     $("#pr_chg i").addClass("fa-play-circle");
