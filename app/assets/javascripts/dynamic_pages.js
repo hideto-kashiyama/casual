@@ -36,13 +36,13 @@
        //var volume = vcookie;
        var volume = document.getElementById("volume");
          
-        volume.addEventListener('input', function() {
+        //volume.addEventListener('input', function() {
    
-         var volumeValue = parseInt(volume.value) / 100;//'0.' + volume.value;  //volume.value/100; //
+          var volumeValue = parseInt(volume.value) / 100;//'0.' + volume.value;  //volume.value/100; //
          
           audio_tag.get(0).volume = volumeValue;
         
-         }, false);
+        // }, false);
      
  }
  
@@ -51,13 +51,13 @@
      
 　　    var spd = document.getElementById("speed");
         
-        spd.addEventListener("change", function() {
+        //spd.addEventListener("change", function() {
             
              var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
            
            audio_tag.get(0).playbackRate = spdValue;
         
-         }, false);
+         //}, false);
      
  }
  

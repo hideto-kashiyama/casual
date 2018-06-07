@@ -1,6 +1,12 @@
 class DynamicPagesController < ApplicationController
  
-#before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :purchase_check
+  
+  def purchase_check
+    redirect_to "http://kir877636.kir.jp/a_credit.html" if current_user.purchase.nil?
+  end
+  
  def home
   
     @products1=Product.where(p:1)

@@ -23,16 +23,24 @@ module Workspace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     
-      config.generators do |g|
+    config.generators do |g|
       g.scaffold_stylesheet = false
-      
-     
-      
-       end
+    end
     
-     config.time_zone = 'Tokyo'
-     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-     
+    config.time_zone = 'Tokyo'
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      port:                 587,
+      address:              'smtp.gmail.com',
+      domain:               'gmail.com',
+      user_name:            'kweshk@gmail.com',
+      password:             ENV['MAIL_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
   end
 end
 

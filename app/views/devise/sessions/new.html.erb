@@ -24,7 +24,12 @@
 
         <div class="actions">
           <%= f.submit "ログイン", class: "login_btn"%>
+          
         </div>
+        
+        <p>New user? <%= link_to "新規ユーザー登録", new_user_registration_path %></p>
+          
+        
       <% end %>
 
       <%= render "devise/shared/links" %>

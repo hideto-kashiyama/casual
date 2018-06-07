@@ -16,7 +16,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
         
        $('#volume').val(50);
        $('#value').val(50);
-       $.cookie('v_cookie', 50); 
+       $.cookie('v_cookie', 50, {path:'/'}); 
    
      }
      
@@ -35,7 +35,7 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
         
        $('#speed').val(1.0);
        $('#value1').val(1.0);
-       $.cookie('s_cookie', 1.0); 
+       $.cookie('s_cookie', 1.0, {path:'/'}); 
    
      }
      
@@ -69,12 +69,12 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
  
      if (lcookie) {
          
-            $('.radio_group').val(lcookie)
+            $('.radio_group input[name="loop"][value="' + lcookie + '"]').prop("checked", true);
  
           } else {
               
-              $('.radio_group').val(0)
-         
+              $('.radio_group input[name="loop"][value="0"]').prop("checked", true);
+        
           }
      
      $("input[name='loop']:radio").change( function() {
