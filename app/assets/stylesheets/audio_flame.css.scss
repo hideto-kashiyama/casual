@@ -46,6 +46,31 @@ div.audio_flame {
   padding: 2px; 
     
 }
+
+span.select_spcap {
+  margin-left : 15px ;  
+    
+    
+}
+
+#select_speed {
+    margin-left : 5px ; 
+    margin-top: 12px;  
+    width: 60px;
+    height: 25px;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    
+    outline: none;
+    background: white;
+    background-image: none;
+
+  border:none;
+  border-radius:5px;
+  box-shadow: none;
+  padding: 2px;    
+}
     
 #f_msg {
     
@@ -57,14 +82,20 @@ div.audio_flame {
 
 #volume {
     
-  width: 200px;
+  width: 280px;
   
 }
 
 #speed {
     
-  width: 200px;
+  width: 240px;
 
+}
+
+span#value {
+    
+    margin-left :10px; 
+    
 }
 
 .input-group {
@@ -73,6 +104,7 @@ div.audio_flame {
 
 /* ▼radioグループの囲み */
 .radio_group {
+    margin-top : -30px ; 
     margin-left : 0px ; 
     color: black;
     border-radius: 5px;  
@@ -181,7 +213,7 @@ input[type="range"].custom:focus {
 }
 
 #vss div {
-    width: 50%;
+    width: 65%;
     float: left;
     
 }

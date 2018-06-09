@@ -4,12 +4,10 @@
 	
 		 <a class="navbar-brand" href="#">
 			  
-				<span ><i class="fa fa-rebel" style="color: white">カジュアル英語
-			
-				</i></span>
+				<span ><i class="fa fa-rebel" style="color: white">カジュアル英語</i></span>
 				
-			</a>
-			
+		</a>
+
 	<ul class="nav navbar-nav">
 			 
 			 <li><form method="get" action="/dynamic_pages/e100_seek">
@@ -23,6 +21,7 @@
         <button id="mic" type="submit" onclick ="record()">
           <i class="fa fa-microphone fa-2x"></i>
         </button></li>
+        
         <li>
          <span>
          　<select id="select_gengo">
@@ -34,22 +33,28 @@
             
       </li>
       
-      
         
-		<li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></i>
- 
-			 
       
-   </ul>
-          
+    </ul>
+    
+    </div>
+   
+     <ul>
+        
+         <p class="navbar-text navbar-right">
+          <a class="toplink" href="/dynamic_pages/home">トップページへ</a>
+          <a><%= current_user.name %></a><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+          </p>
+      
+     </ul>
+
 			<!--ラジオボタン使った場合
 				// <label><input type="radio" name="ej" value="0" checked>英語</label>
     // <label><input type="radio" name="ej" value="1">日本語</label>-->
+    </div>
     
   </nav> 
   
-     
-
 <script>
 
     /*録音　https://qiita.com/inouet/items/2c9e218c05f547bb6852から*/

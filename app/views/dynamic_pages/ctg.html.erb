@@ -9,8 +9,8 @@
      
       <% @categories.each do |ctg| %>
         
-       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
-       
+       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
+     
        <% end %> 
        
      </ul>

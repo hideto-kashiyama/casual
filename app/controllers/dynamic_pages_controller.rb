@@ -11,7 +11,7 @@ class DynamicPagesController < ApplicationController
   
     @products1=Product.where(p:1)
     @products2=Product.where(p:2)
-    
+    @products3=Product.where(p:3) 
  end
     
  def ctg

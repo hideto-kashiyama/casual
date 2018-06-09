@@ -2,7 +2,9 @@
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 
-
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <p id="signup_btn">新規ご購入の方はこちらから→ <%= link_to "新規ユーザー登録", new_registration_path(resource_name) %></p><br />
+<% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "パスワードを忘れた場合?", new_password_path(resource_name) %><br />

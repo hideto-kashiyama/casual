@@ -1,6 +1,7 @@
 
 $(document).ready(
         function() {
+            
 var vcookie = $.cookie('v_cookie');   //ボリューム
 var scookie = $.cookie('s_cookie');   //スピード
 var tcookie = $.cookie('tm_cookie');   //再生間隔 
@@ -20,13 +21,44 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
    
      }
      
+     var elem = document.getElementById('volume');
+             var target = document.getElementById('value');
+             
+              var rangeValue = function (elem, target) {
+                return function(evt){
+                  target.innerHTML = elem.value;
+                }
+              }
+       elem.addEventListener('input', rangeValue(elem, target));
+       
+     
      $('#volume').change(function(){
         
          $.cookie('v_cookie', $('#volume').val(), {path:'/'}); 
-   
+       
      });  
+  
 //スピード
-  /* if(scookie){
+
+ if(scookie){
+        
+      $('#select_speed').val(scookie);
+     
+      
+     } else {
+        
+       $('#select_speed').val("1.0");
+       
+       $.cookie('s_cookie', 0); 
+   
+     }
+     
+     $('#select_speed').change(function(){
+        
+         $.cookie('s_cookie', $('#select_speed').val(), {path:'/'}); 
+       
+     }); 
+ /*if(scookie){
         
       $('#speed').val(scookie);
       $('#value1').text(scookie);
@@ -39,10 +71,21 @@ var lcookie = $.cookie('loop_cookie');//ループ再生
    
      }
      
+      var elem1 = document.getElementById('speed');
+          var target1 = document.getElementById('value1');
+          var rangeValue1 = function (elem1, target1) {
+          return function(evt){
+          target1.innerHTML = elem1.value;
+          
+            }
+          }
+          elem1.addEventListener('input', rangeValue1(elem1, target1));
+         
+     
      $('#speed').change(function(){
         
          $.cookie('s_cookie', $('#speed').val() , {path:'/'}); 
-       
+        
      });  */
      
 //再生間隔 

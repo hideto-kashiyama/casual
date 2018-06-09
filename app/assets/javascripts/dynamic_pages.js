@@ -22,18 +22,7 @@
  
  //音量調整
  function vol(audio_tag) {
-     
-    /*if (vcookie) {
-         
-          var volume = vcookie;
     
-     } else {
-         
-         var volume = document.getElementById("volume");
-         
-     }*/
-     
-       //var volume = vcookie;
        var volume = document.getElementById("volume");
          
       //volume.addEventListener('input', function() {
@@ -49,16 +38,16 @@
   //再生速度調整
  function spd(audio_tag) {
      
-　　    var spd = document.getElementById("speed");
+　　      var spd = document.getElementById("select_speed");
         
-       spd.addEventListener("change", function() {
+    //spd.addEventListener("change", function() {
             
-             var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
+           var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
            
            audio_tag.get(0).playbackRate = spdValue;
         
-        }, false);
-     
+    // }, false);
+   
  }
  
  function rentest() {

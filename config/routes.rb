@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   
  # root 'devise#registrations#new'
   
-      root  'dynamic_pages#e100'
+  #root  'dynamic_pages#e100'
+  root  'dynamic_pages#home'
   
-  resources :tests
+  resources :test
   resources :tdates
   
   resources :dynamic_pages, only: :index do

@@ -14,11 +14,23 @@
 </div> 
 
 
-<!--ボリューム スピードスライダー-->
+<!--ボリューム (スピードスライダ)ー-->
 <div id="vss">  
-  <div><span>volume</span><input type="range"  id="volume" min="0" max="100" class="custom" ><span id="value" class="vs">50</span></div>
-<!--  <div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" class="custom"><span id="value1" class="vs">1.0</span></div> -->
-<br>
+
+  <div><span>volume</span><input type="range"  id="volume" min="0" max="100" class="custom" ><span id="value" class="vs" >50</span></div>
+    
+    <span class="select_spcap">再生速度
+    
+    <select id="select_speed">
+      <option value="1.0">既定</option>
+      <option value="0.9">90％</option>
+      <option value="0.8">80％</option>
+      <option value="0.7">70％</option>
+      <option value="0.6">60％</option>
+      <option value="0.5">50％</option>
+      
+    </select></span>
+<!--<div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" class="custom"><span id="value1" class="vs">1.0</span></div> -->
 </div> 
 
 <div class="b_group">
@@ -31,8 +43,7 @@
       <option value="2">２秒</option>
       <option value="3">３秒</option>
     </select></span>
-        
-        
+  
     <span class="radio_group">ループ再生
     <input type="radio" name="loop" value=0 checked>しない
     <input type="radio" name="loop" value=1>する
@@ -49,35 +60,22 @@
  
 </div>
 
-<div class="main">
-  
- <div class="digg_pagination">
-   <%= will_paginate @masters %> 
- </div>
- 
  <script>
- //ボリューム
-  var elem = document.getElementById('volume');
-  var target = document.getElementById('value');
-  var rangeValue = function (elem, target) {
-    return function(evt){
-      target.innerHTML = elem.value;
-    }
-  }
-  elem.addEventListener('input', rangeValue(elem, target));
- //speed
-  /*var elem1 = document.getElementById('speed');
-  var target1 = document.getElementById('value1');
-  var rangeValue1 = function (elem1, target1) {
-    return function(evt){
-      target1.innerHTML = elem1.value;
-    }
-  }
-  elem1.addEventListener('input', rangeValue1(elem1, target1));*/
-  
-</script>
+ //コピー防止
+      window.onload = function() {
+                    document.body.oncopy = function () {
+                        return false;
+                    }
+       }
+ 
+　</script>
+　
+<div class="submain">
+     <div class="digg_pagination">
+       <%= will_paginate @masters %> 
+     </div>
 
-
+<div class="main">
 
 <ul class="hoge">
   
@@ -96,6 +94,8 @@
      <% end %>
   
 </ul>
+</div>
+ 
 
 <div class="digg_pagination">
    <%= will_paginate @masters %>  
