@@ -1,5 +1,16 @@
 
+  
+   //DOMの準備ができたら呼ばれる。
+  $(function() {
  
+      	$(".pulldown li").hover(function() {
+      		$(this).children('ul').show();
+      	}, function() {
+      		$(this).children('ul').hide();
+      	});
+      	
+   });
+
  
  var atag;//再生中のaudioタグ を格納　停止　一時停止用
 
@@ -22,10 +33,10 @@
  
  //音量調整
  function vol(audio_tag) {
-    
+  
        var volume = document.getElementById("volume");
          
-      //volume.addEventListener('input', function() {
+        //volume.addEventListener('input', function() {
    
           var volumeValue = parseInt(volume.value) / 100;//'0.' + volume.value;  //volume.value/100; //
          
@@ -36,19 +47,19 @@
  }
  
   //再生速度調整
- function spd(audio_tag) {
+ /*function spd(audio_tag) {
      
-　　      var spd = document.getElementById("select_speed");
+　　    var spd = document.getElementById("speed");
         
-    //spd.addEventListener("change", function() {
+        //spd.addEventListener("change", function() {
             
-           var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
+             var spdValue = (spd.value.length == 1)  ? '0' :  spd.value;
            
            audio_tag.get(0).playbackRate = spdValue;
         
-    // }, false);
-   
- }
+        //}, false);
+     
+ }*/
  
  function rentest() {
      
@@ -114,7 +125,7 @@ function tan_tan(key) {
           atag= $(".hoge div").eq(key).find("audio.en"); //停止　一時停止用
           
               vol(atag); // //音量設定
-          　　spd(atag); //再生速度設定
+          　　//spd(atag); //再生速度設定
           
              //イベントリスナー
               $(".hoge div").eq(key).find("audio.en").on('ended',function() {
@@ -201,7 +212,7 @@ function tan_loop(key) {
       atag= $(".hoge div").eq(key).find("audio.en"); //停止　一時停止用
       
               vol(atag); // //音量設定
-          　　spd(atag); //再生速度設定 英語のみ摘要
+          　　//spd(atag); //再生速度設定 英語のみ摘要
       
                 //イベントリスナー
                 $(".hoge div").eq(key).find("audio.en").on('ended',function() {
@@ -221,7 +232,7 @@ function tan_loop(key) {
              　　
              　　　atag= $(".hoge div").eq(key).find("audio.en"); //停止　一時停止用
              　　 vol(atag); // //音量設定
-          　　　　　spd(atag); //再生速度設定 英語のみ摘要
+          　　　　//　spd(atag); //再生速度設定 英語のみ摘要
              　　　
              　  　　 on_event();//ボタン無効にする 
                      on_event1();//ボタン無効にする 

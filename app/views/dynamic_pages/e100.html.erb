@@ -19,7 +19,7 @@
 
   <div><span>volume</span><input type="range"  id="volume" min="0" max="100" class="custom" ><span id="value" class="vs" >50</span></div>
     
-    <span class="select_spcap">再生速度
+   <!-- <span class="select_spcap">再生速度
     
     <select id="select_speed">
       <option value="1.0">既定</option>
@@ -29,9 +29,10 @@
       <option value="0.6">60％</option>
       <option value="0.5">50％</option>
       
-    </select></span>
+    </select></span>-->
+    
 <!--<div><span>speed</span><input type="range" id="speed" value="1.0" min="0.5" max="1.5"　required step="0.1" class="custom"><span id="value1" class="vs">1.0</span></div> -->
-</div> 
+</div> <br>
 
 <div class="b_group">
 
@@ -104,3 +105,109 @@
 </div>
 </div>
 </div>
+
+
+
+<script>
+//クッキー設定
+   //DOMの準備ができたら呼ばれる。
+ $(function() {
+     
+        var vcookie = $.cookie('v_cookie');   //ボリューム
+        var scookie = $.cookie('s_cookie');   //スピード
+        var tcookie = $.cookie('tm_cookie');   //再生間隔 
+        var lcookie = $.cookie('loop_cookie');//ループ再生
+
+//ボリューム
+   if(vcookie){
+        
+      $('#volume').val(vcookie);
+      $('#value').text(vcookie);
+      
+     } else {
+        
+       $('#volume').val(50);
+       $('#value').text(50);
+       $.cookie('v_cookie', 50, {path:'/'}); 
+   
+     }
+     
+     var elem = document.getElementById('volume');
+             var target = document.getElementById('value');
+             
+              var rangeValue = function (elem, target) {
+                return function(evt){
+                  target.innerHTML = elem.value;
+                }
+              }
+       elem.addEventListener('input', rangeValue(elem, target));
+       
+     
+     $('#volume').change(function(){
+        
+         $.cookie('v_cookie', $('#volume').val(), {path:'/'}); 
+       
+     });  
+  
+//スピード
+
+ /*if(scookie){
+        
+      $('#select_speed').val(scookie);
+     
+      
+     } else {
+        
+       $('#select_speed').val("1.0");
+       
+       $.cookie('s_cookie', "1.0"); 
+   
+     }
+     
+     $('#select_speed').change(function(){
+        
+         $.cookie('s_cookie', $('#select_speed').val(), {path:'/'}); 
+       
+     });*/
+ 
+//再生間隔 
+    if(tcookie){
+        
+      $('#select_time').val(tcookie);
+     
+      
+     } else {
+        
+       $('#select_time').val(0);
+       
+       $.cookie('tm_cookie', 0); 
+   
+     }
+     
+     $('#select_time').change(function(){
+        
+         $.cookie('tm_cookie', $('#select_time').val(), {path:'/'}); 
+       
+     }); 
+     
+ //ループ再生    
+ 
+     if (lcookie) {
+         
+            $('.radio_group input[name="loop"][value="' + lcookie + '"]').prop("checked", true);
+ 
+          } else {
+              
+              $('.radio_group input[name="loop"][value="0"]').prop("checked", true);
+        
+          }
+     
+     $("input[name='loop']:radio").change( function() {
+        
+         $.cookie('loop_cookie', $("input:radio[name='loop']:checked").val(), {path:'/'}); 
+         
+     }); 
+     
+ }); 
+ 
+</script>

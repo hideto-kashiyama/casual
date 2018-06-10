@@ -1,66 +1,14 @@
 
-  <script>
   
-    // DOMの準備ができたら呼ばれる。
-    $(function() {
-      
-        $(".pulldown li").hover(function() {
-        <!--$(this).children('ul').slideToggle( 2000 );-->
-        $(this).children('ul').show();
-        
-        }, function() {
-            
-        $(this).children('ul').hide();
-        
-  　   　}); 
-      
-      // 「menu-a」というclassを持つ全要素にマウスオーバー時の処理を設定。
-      $('.menu-a').mouseenter(function() {
-
-        var nowObject = $(this);
-
-        switch(nowObject.text()) {
-          case 'About':
-            nowObject.text('英会話１００選シリーズとは');
-            break;
-          case 'Services':
-            nowObject.text('サービス紹介');
-            break;
-          case 'Contact':
-            nowObject.text('お問い合わせ');
-        }
-      });
-
-      // 「menu-a」というclassを持つ全要素にマウスアウト時の処理を設定。
-      $('.menu-a').mouseleave(function() {
-
-        var nowObject = $(this);
-
-        switch(nowObject.text()) {
-          case '英会話１００選シリーズとは':
-            nowObject.text('About');
-            break;
-          case 'サービス紹介':
-            nowObject.text('Services');
-            break;
-          case 'お問い合わせ':
-            nowObject.text('Contact');
-        }
-      });
-
-    });
-    
-   
-  </script>
-
   <div class="container">  
   
     <div class="mainhome">
       
      <h3>日常英会話 約６万フレーズを掲載！
   
-     <a href="/dynamic_pages/e100">全件表示</a></h3>
-     <div class="row">
+   <a href="/dynamic_pages/e100">全件表示</a></h3>
+   
+    <div class="row">
 　　<div class="col-md-3">
     
     <h4>単語より検索（頻出単語順）</h4>
@@ -75,7 +23,7 @@
                
                      <% Category.where(product_id: prdct2.id).each do |ctg| %>
         　　　　
-                       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
+                       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
                        
                      <% end %> 
                      
@@ -101,7 +49,7 @@
                
                      <% Category.where(product_id: prdct3.id).each do |ctg| %>
         　　　　
-                       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
+                       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
                        
                      <% end %> 
                      
@@ -117,4 +65,6 @@
 </div>
 
 </div>
+
+
 

@@ -1,0 +1,125 @@
+
+  <script>
+  
+    // DOMの準備ができたら呼ばれる。
+    $(function() {
+      
+        $(".pulldown li").hover(function() {
+        $(this).children('ul').slideToggle( 2000 );
+        $(this).children('ul').show();
+        
+        }, function() {
+            
+        $(this).children('ul').hide();
+        
+  　   　}); 
+    });
+    
+   
+  </script>
+  
+
+  <!-- ヘッダーここから -->
+  <!--<div id="header">
+  <div id="headerArea">
+    
+   <div id="header_logo">英会話１００選シリーズ</div>
+  
+ 
+  </div>
+  </div>-->
+  <!-- ヘッダーここまで -->
+  <h1>英作くん</h1>
+  
+ <!-- <div id="main_panel">
+  <div id="main_panelArea">
+
+    
+
+  </div>
+</div>-->
+
+<!-- コンテンツ グレー背景ここから 
+  <div class="content_g clearfix">
+  <div class="content_gArea">
+
+    <div class="main">-->
+  <div class="row">
+    <div class="col-md-6">
+      <h2>ビジネス</h2>
+      
+       <ul class="pulldown" > 
+       
+            <% @products1.each do |prdct1| %>
+            　
+             <li><a class="textflame" href="<%= ctg_dynamic_pages_path(product_id: prdct1.id) %>"><%= prdct1.pnam %></a>
+               　 
+                <ul class="listx" >
+               
+                     <% Category.where(product_id: prdct1.id).each do |ctg| %>
+        　　　　
+                       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
+                       
+                     <% end %> 
+                     
+                </ul>
+                
+               </li>
+        
+            <% end %>
+    
+     　 </ul>
+    </div>
+
+   <div class="col-md-6">
+    <!-- <div class="side">-->
+    
+    <h2>日常会話</h2>
+    
+     <ul class="pulldown" >  
+ 
+         <% @products2.each do |prdct2| %>
+             
+             <li><a class="textflame" href="<%= ctg_dynamic_pages_path(product_id: prdct2.id) %>"><%= prdct2.pnam %></a>
+            
+                 <ul class="listx" >
+               
+                     <% Category.where(product_id: prdct2.id).each do |ctg| %>
+        　　　　
+                       <li><a href="<%= e100_dynamic_pages_path(category_id: ctg.id) %>"><%= ctg.ctg %></a></li>
+                       
+                     <% end %> 
+                     
+                </ul> 
+        
+        <% end %>
+    
+      </ul>
+    </div>
+  </div>
+
+
+<!-- </div>
+
+  </div>
+  </div>
+   コンテンツここまで -->
+  <!-- コンテンツここから 
+
+ 
+  </div>-->
+ 
+  <!-- コンテンツここまで -->
+  
+   <!-- フッターここから 
+   <div id="footer">
+  <div id="footerArea">
+    <div id="footer_nav">
+      <ul>
+        <li><a href="#" class="menu-a">About</a></li>
+        <li><a href="#" class="menu-a">Services</a></li>
+        <li><a href="#" class="menu-a">Contact</a></li>
+      </ul>
+    </div>-->
+    
+   

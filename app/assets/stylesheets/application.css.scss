@@ -29,7 +29,7 @@ margin-bottom: 5px;
 .navbar-nav {
     
    width: 400px; 
-    
+ 
 }
 
 #select_gengo{
@@ -97,11 +97,12 @@ p.navbar-right a {
 
 .mainhome {
     margin-top: 60px;
-    
+  z-index: 0;
 }
 
  /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
+    z-index: 1;
       position:fixed;
       top:0;
       left:0;
