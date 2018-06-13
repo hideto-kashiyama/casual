@@ -7,8 +7,10 @@ div.audio_flame {
   border-radius: 10px;         /* CSS3の書き方 */
   
   border: 3px gray solid;     /* 枠線の装飾 */
-  background-color: #DCDCDC;   /* #D0D5CF背景色 */
-  width: 650px; height: 260px;
+  /* background-color: #FFFAFA;   /* #DCDCDC #D0D5CF背景色 */
+  
+  background:linear-gradient(#A9A9A9, #FFFAFA);
+  width: 595px; height: 260px;
   box-shadow:5px 5px;
   
   padding: 10px 30px;
@@ -82,7 +84,7 @@ span.select_spcap {
 
 #volume {
     
-  width: 280px;
+  width: 200px;
   
 }
 
@@ -122,13 +124,10 @@ span#value {
 
 #seek_result {
     
-margin-left : 5px ; 
-color:red;
+    margin-left : 5px ; 
+    color:red;
  
 }
-
-
-
 
  input[type="range"].custom {
      margin-top: 20px;
@@ -158,6 +157,7 @@ input[type="range"].custom::-webkit-slider-thumb{
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 }
+
 input[type="range"].custom::-webkit-slider-thumb:before {
 	content:"";
 	display:inline-block;
