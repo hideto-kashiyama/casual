@@ -124,9 +124,16 @@ span#value {
 
 #seek_result {
     
+    margin-top : -2px ; 
     margin-left : 5px ; 
-    color:red;
- 
+    color: #A52A2A	;
+    height: 50px;
+    line-height: 1.2em;
+    background-color: transparent;
+    border: transparent;
+    resize: none;
+   
+    
 }
 
  input[type="range"].custom {
@@ -186,7 +193,7 @@ input[type="range"].custom:focus {
 }   
 
 #play_this {
-  
+  line-height: 2;
  font-size: 120%;
  color: #a52a2a;
 }

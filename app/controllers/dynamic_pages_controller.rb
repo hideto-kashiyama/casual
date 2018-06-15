@@ -55,7 +55,7 @@ class DynamicPagesController < ApplicationController
           
             str= @masters.count.to_s
              
-            flash[:warning] = fstr + "：" + str  + "件抽出されました。"
+            flash[:warning] = fstr + "：" + str  + "件"
       
           end
         
