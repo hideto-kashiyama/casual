@@ -8,53 +8,34 @@
   
    <a href="/dynamic_pages/e100">全件表示</a></h3>
    
-    <div class="row">
-　　<div class="col-md-3">
+  <div class="row">
+　　<div class="col-md-6">
     
     <h4>単語より検索（頻出単語順）</h4>
     
-     <ul class="pulldown" >  
+     <ul class="tanbtn" >  
  
          <% @products2.each do |prdct2| %>
              
              <li><a class="textflame" href="<%= ctg_dynamic_pages_path(product_id: prdct2.id) %>"><%= prdct2.pnam %></a>
             
-                 <ul class="listx" >
-               
-                     <% Category.where(product_id: prdct2.id).each do |ctg| %>
-        　　　　
-                       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
-                       
-                     <% end %> 
-                     
-                  </ul> 
-        
-        <% end %>
+         <% end %>
         
       </ul>
                                                                                                                   
 </div>
     
-    <div class="col-md-4"> 
+    <div class="col-md-6"> 
     
     <h4>熟語より検索</h4>
      
-       <ul class="pulldown" >  
+       <ul class="zyukubtn" >  
  
          <% @products3.each do |prdct3| %>
              
              <li><a class="textflame" href="<%= ctg_dynamic_pages_path(product_id: prdct3.id) %>"><%= prdct3.pnam %></a>
             
-                 <ul class="listx" >
-               
-                     <% Category.where(product_id: prdct3.id).each do |ctg| %>
-        　　　　
-                       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
-                       
-                     <% end %> 
-                     
-                  </ul> 
-        
+                
         <% end %>
     
       </ul>
