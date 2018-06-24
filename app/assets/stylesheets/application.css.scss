@@ -17,6 +17,12 @@
 
 @import "bootstrap";
 
+.row {
+    display: flex;
+    
+}
+
+
 li {
 margin-bottom: 5px;
 }
@@ -24,32 +30,6 @@ margin-bottom: 5px;
 .toplink {
     
     color:white;
-}
-
-.navbar-nav {
-    
-   width: 400px; 
- 
-}
-
-#select_gengo{
-    margin-top: 12px;  
-    margin-left: -12px;
-    width: 125px;
-    height: 25px;
-    cursor: pointer;
-    text-indent: 0.01px;
-    text-overflow: ellipsis;
-    
-    outline: none;
-    background: white;
-    background-image: none;
-
-  border:none;
-  border-radius:5px;
-  box-shadow: none;
-  padding: 2px; 
-  
 }
 
 p.navbar-right a {
@@ -75,19 +55,16 @@ p.navbar-right a {
   height:40px;
    font-size:40; 
 }
+
 #signup_btn {
     
     margin-top: 20px;
     font-size:23px; 
 }
 
-.submain {
-    margin-top: 310px;
-    
-}
 
 .main {
- margin-top: 10px;
+ margin-top: 295px;
    /*padding-top:10px;
   margin-top:50px;
   height:auto;
@@ -97,27 +74,38 @@ p.navbar-right a {
 
 .container {
     margin-left: 10px; 
+     
+  margin-top: 30px;
+  z-index: 0;
 }
 
 .mainhome {
    
-    margin-top: 60px;
+  margin-top: 80px;
   z-index: 0;
+  
+}
+
+.navbar-brand {
+    font-size:18px;
+    margin-top: 3px;  
+    
 }
 
  /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-    z-index: 1;
+      z-index: 1;
       position:fixed;
       top:0;
       left:0;
       width:100%;
-      height:50px; 
-        background-color: #65baad;
-        border-color: #3e6962;
-        height: 10px;
-
+      background-color: #65baad;
+      border-color: #3e6962;
+       
+       height: 60px;
+       
 }
+
 
 
 /* navbar deviceのみ*/
@@ -136,26 +124,77 @@ height: 10px;
 
 #mic {
     
-    margin-top: 8px;
-    margin-left: 3px;
+    margin-top: 10px;
+    margin-left: 8px;
     
     background-color:#65baad;
 
      /* ボーダーをなくす */
     border-style: none;
-
 }
 
-#result_text2 {
+#select_gengo{
+    margin-top: 8px;
+    margin-left: 210px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
    
+    outline: none;
+    background: white;
+    background-image: none;
+
   border:none;
-  border-radius:5px;
+  border-radius:0 2px 2px 0;
   box-shadow: none;
-  padding: 2px 8px; 
-  margin-top: 12px;  
-  margin-left: -5px;
-  width:155px;
+  padding: 2px; 
   
+  border-radius:2px 0 0 2px;
+    border-right:none;
+    border:solid 3px #eaeaea;
+    outline: 0;
+    font-size:15px; 
+  
+}
+
+
+#result_text2 {
+    margin-top: 8px;
+    margin-left: -5px;
+    height: 40px;
+    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:180px;
+    border-radius:2px 0 0 2px;
+    border-right:none;
+    border:solid 3px #eaeaea;
+    outline: 0;
+    font-size:15px; 
+}
+#result_btn{
+background:#eaeaea;
+color:#7fbfff;
+}
+#result_btn {
+    margin-top: 8px;
+   padding: 0;
+width: 50px;
+height: 40px;
+position: absolute;
+left: 170px;
+top: 0;
+border-radius:0 2px 2px 0;
+background:#778899;   
+color:#fff;
+border:solid 3px #eaeaea;
+border-left:none;
+font-weight:bold;
+font-size:16px;
+outline: 0;
 }
 
 .btn {
@@ -175,12 +214,7 @@ height: 10px;
     border-radius:10px;
   }
 
-#result_btn {
-    background-color:#F5F5DC;
-    height: 25px;
-    border-radius:5px;
-    border:none;
-}
+
 
 div.collapse.navbar-collapse.navbar-right {
   text-align: right;
@@ -227,7 +261,6 @@ color: #ffffff;
 }
 
 
-
 #navbar-header {
     
    color: white;
@@ -237,7 +270,8 @@ color: #ffffff;
 .hoge{
 
  font-size: 1.5em;
- margin-top: 5px;
+ margin-top: -20px;
+ 
 }
 
 h1 {

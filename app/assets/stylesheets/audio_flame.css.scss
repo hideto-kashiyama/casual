@@ -1,5 +1,5 @@
 div.audio_flame {
-   margin-top: 53px;
+   margin-top: 65px;
    position:fixed; 
    
   -moz-border-radius: 10px;    /* 古いFirefox用 */
@@ -17,8 +17,6 @@ div.audio_flame {
   
   line-height: 300%;
   
-
-   
       i{
         position: relative;
         /* 値は調整してください */
@@ -94,7 +92,7 @@ span.select_spcap {
 
 }
 
-span#value {
+span #value {
     
     margin-left :10px; 
     
@@ -109,7 +107,7 @@ span#value {
     margin-top : -30px ; 
     margin-left : 0px ; 
     color: black;
-    border-radius: 5px;  
+    border-radius: 3px;  
     margin: 20px 10px;         /* 外側の余白 */
     padding: 5px;      /* 内側の余白 */
     background-color: #ffffff; /* 背景色 */
@@ -133,7 +131,7 @@ span#value {
     background-color: transparent;
     border: transparent;
     resize: none;
-   
+    font-size:15px;
     
 }
 

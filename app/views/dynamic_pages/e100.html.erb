@@ -5,12 +5,13 @@
   
 <div class="audio_flame">
     
-<div>     
+<div>
+
   <span id="globalMenu1" onclick="ren()"><i class="fa fa-play-circle fa-4x"></i>play</span >
   <span id="globalMenu2" type="button" onclick="rand()"><i class="fa fa-random fa-4x" ></i>random</span>
   <span id="pr_chg" type="button"  onclick="pause_resume()"><i class="fa fa-pause-circle fa-4x" ></i><a id="atxt">pause</a></span>
   <span type="button" onclick="cancelAudio()"><i class="fa fa-stop-circle fa-4x" ></i>cancel</span>
-  <span><textarea id="seek_result" cols="24"><%= flash[:warning].html_safe %></textarea ></span>
+  <span><textarea id="seek_result" cols="26"><%= flash[:warning].html_safe %></textarea ></span>
   
 </div> 
 
@@ -72,12 +73,10 @@
  
 　</script>
 　
-<div class="submain">
-     <div class="digg_pagination">
+    <div class="main">
+       <div class="digg_pagination">
        <%= will_paginate @masters %> 
      </div>
-
-<div class="main">
 
 <ul class="hoge">
   
@@ -98,7 +97,6 @@
 </ul>
 </div>
  
-
 <div class="digg_pagination">
    <%= will_paginate @masters %>  
  </div>
@@ -106,8 +104,6 @@
 </div>
 </div>
 </div>
-
-
 
 <script>
 //クッキー設定
