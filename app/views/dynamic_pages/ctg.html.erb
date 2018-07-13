@@ -1,17 +1,18 @@
 
-<h2>カテゴリ一覧</h2><div class="half-frame">
-   
-<div class="half-box">
+
+
+
+<h2 class="hcap">単語一覧（頻出順）</h2>
  
  <div id="practis"> 
  
-    <ul >
+    <ul class="hoge">
      
       <% @categories.each do |ctg| %>
         
-       <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
+      　 <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
      
-       <% end %> 
+      <% end %> 
        
      </ul>
 

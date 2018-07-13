@@ -2,6 +2,8 @@
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 
+<div class="hid">
+  
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <p id="signup_btn">新規ご購入の方はこちらから→ <%= link_to "新規ユーザー登録", new_registration_path(resource_name) %></p><br />
 <% end -%>
@@ -23,3 +25,5 @@
     <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
+
+</div>

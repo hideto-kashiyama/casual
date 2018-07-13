@@ -17,6 +17,20 @@
 
 @import "bootstrap";
 
+.hid {
+    
+    visibility: hidden;
+   
+}
+
+
+
+.hcap{
+    
+   margin-top: 60px; 
+}
+
+
 .row {
     display: flex;
     
@@ -46,7 +60,7 @@ p.navbar-right a {
 }
 
 .login_btn {
- 
+ margin-top: 20px;
   background-color: #333;
   border: 2px solid #333;
   color: #fff;
@@ -227,7 +241,7 @@ div.collapse.navbar-collapse.navbar-right {
 .digg_pagination {
    
    margin-left: 30px; 
-    margin-top: 5px;
+   
     
   background: white;
   cursor: default;
@@ -265,12 +279,16 @@ color: #ffffff;
     
    color: white;
 }
-
+.hogewaku{
+    
+ margin-top: 10px; 
+  
+}
 
 .hoge{
-
+ 
  font-size: 1.5em;
- margin-top: -20px;
+  
  
 }
 
