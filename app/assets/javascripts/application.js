@@ -53,7 +53,7 @@
      result = 'undifined';
   }
  
-  alert("お使いのブラウザは「" + result + "」です。");
+ 
 
    if (result=='chrome')  {
        
@@ -62,7 +62,7 @@
         $('#mic').show();
         
    } else {    
-       
+        alert("お使いのブラウザは「" + result + "」です。");
         $('#select_gengo').hide();
         
         $('#mic').hide();
