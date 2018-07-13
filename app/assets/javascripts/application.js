@@ -16,8 +16,9 @@
 //= require jquery.cookie
 //= require_tree .
    
- 
- 
+ $(function(){
+   
+  
   var result = '不明';
  
   var agent = window.navigator.userAgent.toLowerCase();
@@ -53,22 +54,19 @@
      result = 'undifined';
   }
  
+     if (result=='chrome') {
+       $('#select_gengo').css('visibility', 'visible');
+       $('#mic').css('visibility', 'visible');
+       
+      } else {
+        
+        $('#select_gengo').css('visibility', 'hidden');
+       $('#mic').css('visibility', 'hidden');
+    
+     }
  
-
-   if (result=='chrome')  {
-       
-        $('#select_gengo').show();
-        
-        $('#mic').show();
-        
-   } else {    
-        alert("お使いのブラウザは「" + result + "」です。");
-        $('#select_gengo').hide();
-        
-        $('#mic').hide();
-       
-       
-   } 
+ });     
+  
       
 
   
