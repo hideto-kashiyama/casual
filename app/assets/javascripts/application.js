@@ -54,7 +54,8 @@
      result = 'undifined';
   }
  
-     if (result=='chrome') {
+     if (result=='Chrome') {
+      
        $('#select_gengo').css('visibility', 'visible');
        $('#mic').css('visibility', 'visible');
        
