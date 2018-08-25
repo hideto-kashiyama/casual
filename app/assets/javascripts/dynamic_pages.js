@@ -377,7 +377,22 @@ function rand() {
     
    var radio_loop= $("input[name='loop']:checked").val();　//ループ再生の値取得 0 :しない 1 :する
    
-   var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];　　//".hoge div"の要素のインデックス
+    var size;　//ページ内のセンテンスの数　li
+     
+    $(function() {
+        
+   　　　 size = $('.hoge li').length;
+    　　
+       }); 
+       
+     console.log(size);
+     
+     var audio_array = [];
+    　　for (var i=0; i<size; i++) {
+      　　audio_array[i]= i;
+    　}
+     
+   //var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];　　//".hoge div"の要素のインデックス
    
     audio_array=shuffle(audio_array); //配列をシャッフル
 
