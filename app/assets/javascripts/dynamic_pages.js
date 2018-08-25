@@ -86,6 +86,7 @@ function tan(key) {
 //個別再生 loopなし　ren() rand()こちらを使う
 function tan_tan(key) {
     
+   
     　       //  $("#play_this").html($(".hoge li").eq(key).html());
     　         
     　         $("#play_this").html($(".hoge li").eq(key).find("a").html());
@@ -96,13 +97,22 @@ function tan_tan(key) {
        
       //日本語再生
        console.log(key);
+       
      　$(".hoge div").eq(key).find("audio.jp").get(0).play();
      　$(".hoge div").eq(key).find("audio.en").get(0).load();
-     　console.log("j_start");
-     　
+     
      　　　atag= $(".hoge div").eq(key).find("audio.jp"); //停止　一時停止用
      　　　
-     　　   　vol(atag); // //音量設定
+     　　　if (typeof(atag) == "undefined") {
+     　　　    　console.log("存在しない");
+     　　　    // 再生停止(終了）
+　　　　　　　　　　　cancelAudio();
+　　　　　　　　　　　
+     　　　}else{
+     　　　 　　   console.log(key+"存在");
+     　　　    　console.log("j_start")
+     　　　    　;
+     　　　    　vol(atag); // //音量設定
      　　　
      　　　     on_event();//ボタン無効にする 
              on_event1();//ボタン無効にする 
@@ -145,8 +155,10 @@ function tan_tan(key) {
                            
             });                 
                         
-        });
-        
+          });
+          
+     　}; //atagが存在した場合の処理
+     　
     } else {  //再生対象の値 ae :英
         
         　$(".hoge div").eq(key).find("audio.en").get(0).play();
@@ -262,8 +274,11 @@ function ren() {
     
      var i = 0;
      
-         tan_tan(audio_array[i]);  //eq()の一番目を再生。
+     　　　
+              tan_tan(audio_array[i]);  //eq()の一番目を再生。
          
+     　　　
+     　　　
          //イベントリスナー
         　$(".hoge div audio.en").on('ended',function() {
         　    
