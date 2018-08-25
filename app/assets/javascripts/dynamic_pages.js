@@ -103,7 +103,7 @@ function tan_tan(key) {
      
      　　　atag= $(".hoge div").eq(key).find("audio.jp"); //停止　一時停止用
      　　　
-     　　　if (typeof(atag) === "null") { //undefined
+     　　　if (typeof(key) === "null") { //undefined
      　　　    　console.log("存在しない");
      　　　    // 再生停止(終了）
 　　　　　　　　　　　cancelAudio();
