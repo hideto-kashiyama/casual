@@ -103,13 +103,13 @@ function tan_tan(key) {
      
      　　　atag= $(".hoge div").eq(key).find("audio.jp"); //停止　一時停止用
      　　　
-     　　　if (typeof(key) === "null") { //undefined
-     　　　    　console.log("存在しない");
+     　　　//if (typeof(key) === "null") { //undefined
+     　　　   // 　console.log("存在しない");
      　　　    // 再生停止(終了）
-　　　　　　　　　　　cancelAudio();
+　　　　　　　　　　//　cancelAudio();
 　　　　　　　　　　　
-     　　　}else{
-     　　　 　　   console.log(key+"存在");
+     　　//　}else{
+     　　　 //　　   console.log(key+"存在");
      　　　    　console.log("j_start")
      　　　    　;
      　　　    　vol(atag); // //音量設定
@@ -157,7 +157,7 @@ function tan_tan(key) {
                         
           });
           
-     　}; //atagが存在した場合の処理
+     //　}; //atagが存在した場合の処理
      　
     } else {  //再生対象の値 ae :英
         
@@ -264,15 +264,34 @@ function tan_loop(key) {
    
   }
   
+ 
+  
 //連続再生
 function ren() {
     
+   
      renflag = true;　//連続再生ボタンが押された
      
      var radio_loop= $("input[name='loop']:checked").val();　//ループ再生の値取得 0 :しない 1 :する
-     var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];　//".hoge div"の要素のインデックス
+     
+    var size;　//ページ内のセンテンスの数　li
+     
+    $(function() {
+        
+   　　　 size = $('.hoge li').length;
+    　　
+       }); 
+       
+     console.log(size);
+     
+     var audio_array = [];
+    　　for (var i=0; i<size; i++) {
+      　　audio_array[i]= i;
+    　}
+     
+    //var audio_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];　//".hoge div"の要素のインデックス
     
-     var i = 0;
+     　var i = 0;
      
      　　　
               tan_tan(audio_array[i]);  //eq()の一番目を再生。
