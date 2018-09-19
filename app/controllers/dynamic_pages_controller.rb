@@ -12,11 +12,13 @@ class DynamicPagesController < ApplicationController
     @products1=Product.where(p:1)
     @products2=Product.where(p:2)
     @products3=Product.where(p:3) 
+    
  end
     
- def ctg
+ def ctg  # 単語
        
        @categories = Category.where(product_id: params[:product_id])
+       
         
         #@product = Product.find_by_id(params[:product_id])
         #@tdates = Tdate.where(product_id: params[:product_id]) 
@@ -24,6 +26,25 @@ class DynamicPagesController < ApplicationController
         #@page_title = @product.pnam
       
   end
+  
+  def ctg3 #熟語
+       
+       @categories3 = Category.where(product_id: params[:product_id])
+       
+  end
+  
+ def ctg2  #頻出熟語トップ100
+    
+    @categories2=Category.where(:id => 8344..8443)
+    #:id => 8344..8443
+ end
+ 
+ def ctg4  #頻出単語トップ100
+    
+    @categories4=Category.where(:id => 1..100)
+  
+ end
+ 
   
   def e100
    

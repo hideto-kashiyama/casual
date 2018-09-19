@@ -22,6 +22,8 @@
          <% end %>
         
       </ul>
+      
+      <a class="textflame2" href="<%= ctg4_dynamic_pages_path %>">頻出単語トップ100</a>
                                                                                                                   
    </div>
     
@@ -32,17 +34,20 @@
        <ul class="zyukubtn" >  
  
          <% @products3.each do |prdct3| %>
+         
+             <li><a class="textflame" href="<%= ctg3_dynamic_pages_path(product_id: prdct3.id) %>"><%= prdct3.pnam %></a>
              
-             <li><a class="textflame" href="<%= ctg_dynamic_pages_path(product_id: prdct3.id) %>"><%= prdct3.pnam %></a>
-            
-        <% end %>
+         <% end %>
+        
+        </ul>
+     
+      <a class="textflame2" href="<%= ctg2_dynamic_pages_path %>">頻出熟語トップ100</a>
     
-      </ul>
+     
   </div> 
  
  </div>
 
- 
 </div> 
 
 

@@ -69,8 +69,25 @@
 	border-radius: 10px; 
 
 }
+
+.textflame2 {
+      background-color: #336699;
+	color: #fff;
+	display: block;
+	width: 145px;
+	height:30px;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 10px; 
+
+}
  
 .textflame:hover {
+	background-color:#113366;
+	color: #fff;
+}	
+
+.textflame2:hover {
 	background-color:#113366;
 	color: #fff;
 }	

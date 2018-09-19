@@ -1,11 +1,11 @@
 
-<h2 class="hcap">単語一覧（頻出順）</h2>
+<h2 class="hcap">熟語一覧（頻出順）</h2>
  
  <div id="practis"> 
  
     <ul class="hoge">
      
-      <% @categories.each do |ctg| %>
+      <% @categories3.each do |ctg| %>
         
       　 <li><a href="<%= e100_seek_dynamic_pages_path(fstr: ctg.ctg) %>"><%= ctg.ctg %></a></li>
      

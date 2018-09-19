@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       get :home
       get :help
       get :ctg
+      get :ctg3
+      get :ctg2
+      get :ctg4
       get :e100
       get :e100_test
       get :about
