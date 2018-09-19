@@ -5,6 +5,34 @@
 @charset "utf-8";
 
 
+//単熟語トップ１００連番付与
+.tp li::before{
+counter-increment: count-number;
+  content: counters(count-number,".") " ";
+  color: #2581C4;
+  font-weight: bold;
+  font-style: italic;
+  //border: 1px #2581C4 solid;
+ height: 25px;
+ width: 29px;
+  display: block;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+ margin: -5px 12px 0 0;
+  padding: 5px 1px 0 0px;
+  
+}
+
+.tp li {
+    list-style-type: none
+
+}
+
+
+body{counter-reset:count-number;}
+
+
 .listx li {
  background-color: transparent;
  margin-bottom: 1px;
