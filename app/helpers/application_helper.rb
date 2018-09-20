@@ -16,7 +16,7 @@ module ApplicationHelper
   end
   
   def full_title(page_title)
-    base_title = "English Conversation 100 - Election series"
+    base_title = "Casual English"
     if page_title.empty?
       base_title
     else
