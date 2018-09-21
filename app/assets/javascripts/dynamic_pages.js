@@ -197,6 +197,10 @@ function tan_tan(key) {
  //個別再生 ループあり
 function tan_loop(key) {
     
+    
+  $("#play_this").html($(".hoge li").eq(key).find("a").html());
+
+    
   radio_a= $("input[name='je']:checked").val();　//再生対象の値 aje :日英 ae:英
     
    if ( radio_a=="aje") {　//再生対象の値 aje :日英
