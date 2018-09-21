@@ -89,7 +89,7 @@ function tan_tan(key) {
    
     　       //  $("#play_this").html($(".hoge li").eq(key).html());
     　         
-    　         $("#play_this").html($(".hoge li").eq(key).find("a").html());
+    　         $("#play_this").html($(".hoge li").eq(key).find("a").html())　//audio_flameにテキスト表示
 
     radio_a= $("input[name='je']:checked").val();　//再生対象の値 aje :日英 ae:英
      
@@ -198,7 +198,7 @@ function tan_tan(key) {
 function tan_loop(key) {
     
     
-  $("#play_this").html($(".hoge li").eq(key).find("a").html());
+  $("#play_this").html($(".hoge li").eq(key).find("a").html());　//audio_flameにテキスト表示
 
     
   radio_a= $("input[name='je']:checked").val();　//再生対象の値 aje :日英 ae:英
@@ -331,6 +331,7 @@ function ren() {
                      if ($(this).is(".hoge div.last_audio audio.en")) { 
               
                             console.log("hit!");
+                           
                             
                       //ループ再生しない
                      if ( radio_loop==0 ) {
@@ -342,6 +343,7 @@ function ren() {
                         off_event2()
                         renflag = false;
                         $(".hoge div.last_audio").removeClass("last_audio"); //動的に追加したクラスを削除
+                         $("#play_this").empty();　//audio_flameのテキスト削除
                          
                      } else {  //ループ再生する
            
@@ -435,6 +437,7 @@ function rand() {
                                     off_event2();//ボタン有効にする
                                     randflag=false;
                                     $(".hoge div.last_audio").removeClass("last_audio"); //動的に追加したクラスを削除
+                                    $("#play_this").empty();　//audio_flameのテキスト削除
                                     
                              } else {  //ループ再生する
                          
@@ -468,6 +471,8 @@ function cancelAudio(){
     renflag = false;
     randflag=false;
     $(".hoge div.last_audio").removeClass("last_audio"); //動的に追加したクラスを削除
+    
+    $("#play_this").empty();　//audio_flameのテキスト削除
     
 }  
 
