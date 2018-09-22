@@ -152,47 +152,30 @@
        
      });  
   
-//スピード
 
- /*if(scookie){
-        
-      $('#select_speed').val(scookie);
-     
-      
-     } else {
-        
-       $('#select_speed').val("1.0");
-       
-       $.cookie('s_cookie', "1.0"); 
-   
-     }
-     
-     $('#select_speed').change(function(){
-        
-         $.cookie('s_cookie', $('#select_speed').val(), {path:'/'}); 
-       
-     });*/
- 
 //再生間隔 
 
     if(tcookie){
         
       $('#select_time').val(tcookie);
-     
+    
       
      } else {
         
        $('#select_time').val(0);
        
-       $.cookie('tm_cookie', 0); 
+       $.cookie('tm_cookie', 0, {path:'/'}); 
    
      }
      
+     
      $('#select_time').change(function(){
-        
-         $.cookie('tm_cookie', $('#select_time').val(), {path:'/'}); 
-       
+      
+         $.cookie('tm_cookie', $('#select_time').val()); 
+     
      }); 
+     
+     
      
  //ループ再生    
  
@@ -213,5 +196,28 @@
      }); 
      
  }); 
+ 
+ 
+ //スピード
+
+ /*if(scookie){
+        
+      $('#select_speed').val(scookie);
+     
+      
+     } else {
+        
+       $('#select_speed').val("1.0");
+       
+       $.cookie('s_cookie', "1.0"); 
+   
+     }
+     
+     $('#select_speed').change(function(){
+        
+         $.cookie('s_cookie', $('#select_speed').val(), {path:'/'}); 
+       
+     });*/
+ 
  
 </script>
