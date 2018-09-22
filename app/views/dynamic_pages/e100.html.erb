@@ -120,7 +120,8 @@
         var scookie = $.cookie('s_cookie');   //スピード
         var tcookie = $.cookie('tm_cookie');   //再生間隔 
         var lcookie = $.cookie('loop_cookie');//ループ再生
-
+        var jecookie = $.cookie('je_cookie');//日英再生対象
+  
 //ボリューム
    if(vcookie){
         
@@ -195,8 +196,27 @@
          
      }); 
      
- }); 
+
  
+ //日英再生対象   
+ 
+if (jecookie) {
+         
+            $('.radio_group input[name="je"][value="' + jecookie + '"]').prop("checked", true);
+ 
+          } else {
+              
+              $('.radio_group input[name="je"][value="aje"]').prop("checked", true);
+        
+          }
+     
+     $("input[name='je']:radio").change( function() {
+        
+         $.cookie('je_cookie', $("input:radio[name='je']:checked").val(), {path:'/'}); 
+         
+     }); 
+     
+ }); 
  
  //スピード
 
