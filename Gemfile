@@ -69,3 +69,4 @@ gem 'will_paginate'
 
 gem "font-awesome-rails"
 gem "config"
+
