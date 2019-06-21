@@ -300,8 +300,6 @@ function ren() {
      　　　
               tan_tan(audio_array[i]);  //eq()の一番目を再生。
          
-     　　　
-     　　　
          //イベントリスナー
         　$(".hoge div audio.en").on('ended',function() {
         　    
