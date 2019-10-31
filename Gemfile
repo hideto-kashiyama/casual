@@ -61,7 +61,7 @@ end
 
 gem 'bootstrap-sass', '3.3.1'
 
-gem 'devise', '3.4.1'
+gem 'devise', '4.7.1'
 
 gem 'aws-sdk'
 
